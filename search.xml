@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>这是一个关于在文章中展示图片的测试</title>
+      <link href="/2023/06/16/test0616/"/>
+      <url>/2023/06/16/test0616/</url>
+      
+        <content type="html"><![CDATA[<p>如果成功，下面应该可以看到图片</p><img src="/.io//06/16/test0616/test0.jpg" class="" title="This is an example image">]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>水一下^-^</title>
       <link href="/2023/06/02/new/"/>
       <url>/2023/06/02/new/</url>
