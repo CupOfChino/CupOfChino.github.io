@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>2023.10.20</title>
+      <link href="/2023/10/20/2023-10-20/"/>
+      <url>/2023/10/20/2023-10-20/</url>
+      
+        <content type="html"><![CDATA[<p>snprintf是一个C标准库函数，可以将格式化的输出写入字符串中。它类似于标准库函数printf，<br>但除了能够输出到屏幕上之外，它还可以将结果输出到一个字符数组中，<br>因此也被称为“打印到字符串”。它的原型如下：</p><p>int snprintf(char *str, size_t size, const char *format, …);</p><p>参数含义如下：</p><p>str：目标字符串的指针，即输出结果将要被写入的字符数组；<br>size：目标字符串的长度，即字符数组的最大空间；<br>format：格式化字符串，与printf的格式化字符串一样；<br>…：可变参数列表，用于替换格式化字符串中的占位符。<br>snprintf函数的返回值代表实际写入目标字符串的字符数，如果返回值等于目标字符串的长度，则说明目标字符串已经被完全写满了。</p><p>以下是一个例子：</p><p>#include &lt;stdio.h&gt;</p><p>int main() {<br>    char buf[64];<br>    int value = 12345;<br>    int n = snprintf(buf, sizeof(buf), “the value is: %d\n”, value);<br>    printf(“write %d characters: %s\n”, n, buf);<br>    return 0;<br>}<br>####################################################################<br>输出结果：<br>write 20 characters: the value is: 12345</p><p>####################################################################</p><p>这个例子调用了snprintf函数来格式化一个字符串，然后将输出结果存储在一个字符数组buf中。<br>由于buf有足够的空间来容纳输出结果，所以snprintf函数成功地将结果写入buf中，并返回了实际写入的字符数。<br>最后，我们使用printf函数输出了写入的字符数和字符数组中的内容。</p><p>在实际中，snprintf函数通常用于构建日志信息、格式化字符串等场景。<br>由于它可以将输出结果写入预先分配好的字符数组中，因此可以避免缓冲区溢出问题。<br>另外，通过计算输出结果的长度，我们还可以事先知道输出结果的占用空间，从而可以更好地控制内存的分配和释放</p><p>九九乘法表也可以这样用来使得更加整齐：</p><p>#include &lt;stdio.h&gt;</p><p>int main() {<br>    int max_product = 9 * 9;  // 最大乘积<br>    int max_digits = snprintf(NULL, 0, “%d”, max_product);  // 最大乘积的位数</p><pre><code>int i, j;for (i = 1; i &lt;= 9; i++) {    for (j = 1; j &lt;= i; j++) {        int product = i * j;        printf("%d*%d=%*d ", j, i, max_digits, product);    }    printf("\n");}return 0;</code></pre><p>}<br>输出结果：</p><p>1<em>1= 1<br>1</em>2= 2 2<em>2= 4<br>1</em>3= 3 2<em>3= 6 3</em>3= 9<br>1<em>4= 4 2</em>4= 8 3<em>4=12 4</em>4=16<br>1<em>5= 5 2</em>5=10 3<em>5=15 4</em>5=20 5<em>5=25<br>1</em>6= 6 2<em>6=12 3</em>6=18 4<em>6=24 5</em>6=30 6<em>6=36<br>1</em>7= 7 2<em>7=14 3</em>7=21 4<em>7=28 5</em>7=35 6<em>7=42 7</em>7=49<br>1<em>8= 8 2</em>8=16 3<em>8=24 4</em>8=32 5<em>8=40 6</em>8=48 7<em>8=56 8</em>8=64<br>1<em>9= 9 2</em>9=18 3<em>9=27 4</em>9=36 5<em>9=45 6</em>9=54 7<em>9=63 8</em>9=72 9*9=81</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>2023.10.18</title>
       <link href="/2023/10/18/2023-10-18/"/>
       <url>/2023/10/18/2023-10-18/</url>
